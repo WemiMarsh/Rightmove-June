@@ -1,5 +1,6 @@
 package co.uk.rightmove.pages;
 
+import co.uk.rightmove.commons.DriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,11 +10,11 @@ import java.util.List;
 
 public class SearchResultPage extends BasePage {
     public SearchResultPage (WebDriver driver){
-        this.driver = driver;
+        DriverManager.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy (className = "proprtyCard-priceValue")
+    @FindBy (className = "propertyCard-priceValue")
     List<WebElement> searchResults;
 
     public PropertyDetailsPage clickFirstProperty(){

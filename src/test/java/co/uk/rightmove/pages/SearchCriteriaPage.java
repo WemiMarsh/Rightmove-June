@@ -28,8 +28,6 @@ public class SearchCriteriaPage extends BasePage{
     @FindBy(id = "submit")
     private WebElement findPropertiesButton;
 
-    @FindBy(id = "")
-
     public boolean isSearchCriteriaPageDisplayed(){
         return driver.getCurrentUrl().contains("search");
     }
@@ -50,7 +48,7 @@ public class SearchCriteriaPage extends BasePage{
         selectElementByText(propertyType, text);
     }
 
-    public SearchCriteriaPage clickFindPropertiesButton(){
+    public SearchResultPage clickFindPropertiesButton(){
         findPropertiesButton.click();
 
         return new SearchResultPage(driver);
